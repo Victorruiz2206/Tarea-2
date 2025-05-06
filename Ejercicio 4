@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    float Capital, Interes, MontoFinal;
+
+    // Pedir el capital invertido y el interés mensual
+    printf("Ingrese el monto del capital invertido: ");
+    scanf("%f", &Capital);
+
+    printf("Ingrese el interés mensual: ");
+    scanf("%f", &Interes);
+
+    // Calcular el monto final al terminar el mes
+    MontoFinal = Capital + (Capital * Interes / 100);
+
+    // Resultado
+    printf("Monto total al finalizar el mes: %.2f\n", MontoFinal);
+
+    return 0;
+}
