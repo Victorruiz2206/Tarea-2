@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    float dolares, pesos;
+    float Cambio = 11.96;
+
+    // Cantidad en dólares
+    printf("Ingrese la cantidad de dólares: ");
+    scanf("%f", &dolares);
+
+    // Conversión
+    pesos = dolares * Cambio;
+
+    // Resultado
+    printf("conversion en pesos = %.2f\n", pesos);
+
+    return 0;
+}
+
