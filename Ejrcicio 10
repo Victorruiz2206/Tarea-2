@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+    int positivos = 0, negativos = 0, nulos = 0;
+
+    printf("Introduce 100 números:\n");
+
+    for (int i = 0; i < 100; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &num);
+
+        if (num > 0) {
+            positivos++;
+        } else if (num < 0) {
+            negativos++;
+        } else {
+            nulos++;
+        }
+    }
+
+    printf("\nResultados:\n");
+    printf("Positivos: %d\n", positivos);
+    printf("Negativos: %d\n", negativos);
+    printf("Nulos (ceros): %d\n", nulos);
+
+    return 0;
+}
