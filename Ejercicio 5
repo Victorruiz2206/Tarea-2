@@ -1,1 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    float Compra, Descuento = 0, Pagar;
+
+    // Solicita al usuario ingresar el monto de la compra
+    printf("Ingrese el monto de la compra: ");
+    scanf("%f", &Compra);
+
+    // Descuento
+    if (Compra > 2500) {
+        Descuento = Compra * 0.08;
+    }
+
+    // Total a pagar
+    Pagar = Compra - Descuento;
+
+    // Resultado
+    printf("Descuento aplicado: %.2f\n", Descuento);
+    printf("Total a pagar: %.2f\n", Pagar);
+
+    return 0;
+}
 
