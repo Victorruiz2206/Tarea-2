@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int Num1, Num2;
+
+    // Ingresar dos números enteros
+    printf("Ingrese el primer número: ");
+    scanf("%d", &Num1);
+
+    printf("Ingrese el segundo número: ");
+    scanf("%d", &Num2);
+
+    // Verifica si alguno de los números es divisor del otro
+    if (Num1 != 0 && Num2 != 0) {
+        if (Num1 % Num2 == 0) {
+            printf("%d es divisor de %d\n", Num2, Num1);
+        } else if (Num2 % Num1 == 0) {
+            printf("%d es divisor de %d\n", Num1, Num2);
+        } else {
+            printf("Ninguno de los dos números es divisor del otro.\n");
+        }
+    } else {
+        printf("No se puede dividir por cero.\n");
+    }
+
+    return 0;
+}
