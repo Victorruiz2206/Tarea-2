@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int Suma = 0;
+    
+    for (int i = 10; i <= 50; i += 2) {
+        Suma += i;
+    }
+
+    printf("La suma de los pares es: %d\n", Suma);
+
+    return 0;
+}
