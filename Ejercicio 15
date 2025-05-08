@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+#define TAMANIO 100
+
+typedef struct {
+    int datos[TAMANIO];
+    int longitud;
+} ArregloEnteros;
+
+void contarSignos(ArregloEnteros arr, int *positivos, int *negativos, int *nulos) {
+    *positivos = *negativos = *nulos = 0;
+    for (int i = 0; i < arr.longitud; i++) {
+        if (arr.datos[i] > 0)
+            (*positivos)++;
+        else if (arr.datos[i] < 0)
+            (*negativos)++;
+        else
+            (*nulos)++;
+    }
+}
+
+int main() {
+    ArregloEnteros miArreglo;
+    int i;
+    int positivos, negativos, nulos;
+
+    printf("Ingrese la cantidad de elementos: ");
+    scanf("%d", &miArreglo.longitud);
+
+    if (miArreglo.longitud > TAMANIO || miArreglo.longitud <= 0) {
+        printf("Tamaño no válido.\n");
+        return 1;
+    }
+
+    printf("Ingrese %d enteros:\n", miArreglo.longitud);
+    for (i = 0; i < miArreglo.longitud; i++) {
+        scanf("%d", &miArreglo.datos[i]);
+    }
+
+    contarSignos(miArreglo, &positivos, &negativos, &nulos);
+
+    // Mostrar los resultados
+    printf("Positivos: %d\n", positivos);
+    printf("Negativos: %d\n", negativos);
+    printf("Nulos (ceros): %d\n", nulos);
+
+    return 0;
+}
