@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+#define TAMANIO 100
+
+typedef struct {
+    int datos[TAMANIO];
+    int longitud;
+} ArregloEnteros;
+
+int sumarArreglo(ArregloEnteros arr) {
+    int suma = 0;
+    for (int i = 0; i < arr.longitud; i++) {
+        suma += arr.datos[i];
+    }
+    return suma;
+}
+
+int main() {
+    ArregloEnteros miArreglo;
+    int i;
+
+    printf("Ingrese la cantidad de elementos: ");
+    scanf("%d", &miArreglo.longitud);
+
+    if (miArreglo.longitud > TAMANIO || miArreglo.longitud <= 0) {
+        printf("Tamaño no válido.\n");
+        return 1;
+    }
+
+    printf("Ingrese %d enteros:\n", miArreglo.longitud);
+    for (i = 0; i < miArreglo.longitud; i++) {
+        scanf("%d", &miArreglo.datos[i]);
+    }
+
+    int resultado = sumarArreglo(miArreglo);
+    printf("La suma de los elementos es: %d\n", resultado);
+
+    return 0;
+}
