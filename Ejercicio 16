@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+#define TAMANIO 100
+
+typedef struct {
+    int datos[TAMANIO];
+    int longitud;
+} ArregloEnteros;
+
+void llenarPares(ArregloEnteros *arr) {
+    arr->longitud = TAMANIO;
+    for (int i = 0; i < TAMANIO; i++) {
+        arr->datos[i] = (i + 1) * 2; 
+    }
+}
+
+void imprimirArreglo(ArregloEnteros arr) {
+    for (int i = 0; i < arr.longitud; i++) {
+        printf("%d ", arr.datos[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    ArregloEnteros miArreglo;
+
+    llenarPares(&miArreglo);
+
+    printf("Los primeros 100 números pares son:\n");
+    imprimirArreglo(miArreglo);
+
+    return 0;
+}
