@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+#define TAMANIO 100
+
+typedef struct {
+    int datos[TAMANIO];
+    int longitud;
+} ArregloEnteros;
+
+int contarApariciones(ArregloEnteros arr, int numero) {
+    int contador = 0;
+    for (int i = 0; i < arr.longitud; i++) {
+        if (arr.datos[i] == numero) {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+int main() {
+    ArregloEnteros miArreglo;
+    int numero, i;
+
+    printf("Ingrese la cantidad de elementos: ");
+    scanf("%d", &miArreglo.longitud);
+
+    if (miArreglo.longitud > TAMANIO || miArreglo.longitud <= 0) {
+        printf("Tamaño no válido.\n");
+        return 1;
+    }
+
+    printf("Ingrese %d enteros:\n", miArreglo.longitud);
+    for (i = 0; i < miArreglo.longitud; i++) {
+        scanf("%d", &miArreglo.datos[i]);
+    }
+
+    printf("Ingrese el número a buscar: ");
+    scanf("%d", &numero);
+
+    int apariciones = contarApariciones(miArreglo, numero);
+    printf("El número %d aparece %d veces en el arreglo.\n", numero, apariciones);
+
+    return 0;
+}
